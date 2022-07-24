@@ -16,7 +16,6 @@
 ## Association
  has_many :items, dependent: :destroy
  has_many :orders
- has_one :purchases
 
 ##  itemsテーブル
 
@@ -34,6 +33,7 @@
 
 ## Association
  belongs_to :user
+ has_many :orders
 
 ## purchases テーブル
 
@@ -45,17 +45,19 @@
 | house_number  | string     | null: false                    |
 | building_name | string     |                                |
 | phone_number  | string     | null: false                    |
-| user          | references | null: false, foreign_key: true |
+| order         | references | null: false, foreign_key: true |
 
 ## Association
-belongs_to :user
+belongs_to :order
 
 ## orders テーブル
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
 | user        | references | null: false, foreign_key: true |
-| purchase    | references | null: false, foreign_key: true |
+| item        | references | null: false, foreign_key: true |
 
 ## Association
 belongs_to :user
+belongs_to :item
+has_many :orders
