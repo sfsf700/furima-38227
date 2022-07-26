@@ -11,7 +11,6 @@ class User < ApplicationRecord
     validates :last_name_kana
     validates :first_name_kana
     validates :birth_day
-    validates :password, length: { minimum: 6 }
   end
   
   with_options allow_blank: true do
