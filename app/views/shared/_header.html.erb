@@ -1,5 +1,7 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
+  <p><%= link_to "出品へ", new_item_path, class: "category-list" %></p>
+  <% breadcrumb :root %>
   <div class='search-bar-contents'>
     <%= link_to image_tag("furima-logo-color.png", class:"furima-icon"), "/" %>
     <form class="search-form" action="#">
